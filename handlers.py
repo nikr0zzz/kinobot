@@ -124,6 +124,7 @@ async def choose_filter_rate(message: types.Message):
     prs.get_urls_from_filter(url)
     film_content = prs.filter_films
     link_kb = types.InlineKeyboardMarkup()
+    j.film_pos = 0
     for i in range(j.film_pos, j.film_pos+5):
         if i < len(film_content['names']):
             link_kb.add(types.InlineKeyboardButton(text=film_content['names'][i], callback_data=film_content['urls'][i]))
